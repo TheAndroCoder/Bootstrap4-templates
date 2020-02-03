@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login Template</title>
+    <style>
+    body{
+        margin:0;
+        padding:0;
+    }
+    body{
+        background: url('https://i.ytimg.com/vi/5n_9EnY0vzk/maxresdefault.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    }
+    #login-card{
+        background-color: #fff;
+        width:100%;
+        border-radius: 20px;
+        margin-top: 100px;
+        padding:20px;
+    }
+    
+    .input-box{
+        width:70%;
+        height:50px;
+        border:none;
+        background-color: lightgray;
+        border-radius: 20px;
+        color:black;
+        outline: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .login-btn{
+        width:70%;
+        height:50px;
+        border:none;
+        background-color: orangered;
+        border-radius: 20px;
+        transition: 0.5s;
+        color:white;
+    }
+    .login-btn:hover{
+        background-color: red;
+    }
+    .fab{
+        border-radius: 40px;
+        padding:20px;
+        color:white;
+        background-color: blue;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div id="login-card" class="py-5">
+                    <p class="display-4 text-center" id="login-text">LOGIN</p>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" class="input-box" placeholder="Username">
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <input type="password" class="input-box" placeholder="Password">
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <button class="login-btn">LOGIN</button>
+                    </div>
+                    <p class="text-center mt-3 font-weight-bold">OR</p>
+                    <div class="d-flex justify-content-center">
+                        <i class="fa fa-facebook-square fa-2x fab"></i>
+                        <i class="fa fa-google fa-2x fab mx-3"></i>
+                        <i class="fa fa-github fa-2x fab"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>
+</html>
