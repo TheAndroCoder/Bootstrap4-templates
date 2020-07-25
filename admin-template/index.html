@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        :root{
+            --bg-color-dark:rgb(221, 19, 19);
+            --bg-color-light:rgb(233, 93, 93);
+            --text-color-dark:black;
+            --text-color-muted:rgb(158, 155, 155);
+            --text-color-light:#fff;
+        }
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #f1f1f1;
+        }
+        .sidebar{
+            position: fixed;
+            width:200px;
+            height:100%;
+            background-color: var(--bg-color-dark);
+            left:-200px;
+            transition: left 0.3s;
+        }
+        .sidebar.active{
+            left:0px;
+        }
+        .hamburger{
+            position: absolute;
+            left:230px;
+            top:20px;
+        }
+        .hamburger:hover{
+            cursor: pointer;
+        }
+        .hamburger span{
+            display: block;
+            width:30px;
+            height:3px;
+            background-color: black;
+            margin:3px 0px;
+        }
+        .sidebar ul{
+            margin:70px 10px;
+            list-style-type: none;
+        }
+        .sidebar li{
+            padding:5px 10px;
+            margin:5px 0px;
+            color: var(--text-color-light);
+            border-radius: 10px;
+        }
+        .sidebar li.active{
+            background-color: var(--bg-color-light);
+        }
+        .sidebar li:hover{
+            cursor: pointer;
+            background-color: var(--bg-color-light);
+        }
+        .screen{
+            margin-left: 0px;
+            transition: margin 0.3s;
+        }
+        .screen.active{
+            margin-left:200px;
+        }
+        header{
+            height:270px;
+            background-color: var(--bg-color-dark);
+            padding:50px;
+        }
+        .overviews{
+            margin-top:-70px;
+        }
+        .overview-box{
+            height:200px;
+            background-color: white;
+            width:100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px var(--bg-color-dark);
+            padding:20px;
+        }
+        .overview-box .value{
+            color:var(--text-color-dark);
+            font-size: 38px;
+            font-weight: bold;
+        }
+        .overview-box .title{
+            color:var(--text-color-dark);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .overview-box .updated{
+            color:var(--text-color-muted);
+
+        }
+        hr{
+            background-color: var(--bg-color-light);
+            height:3px;
+        }
+        i{
+            margin-right:15px;
+        }
+        .sales-table{
+            margin-top:60px;
+        }
+        table{
+            width:100%;
+        }
+        thead{
+            background-color: var(--bg-color-dark);
+            border:none;
+            border-radius: 10px;
+        }
+        th{
+            padding:20px;
+            color:var(--text-color-light);
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;  
+        }
+        td{
+            text-align: center;
+        }
+        tbody td{
+            padding:15px;
+        }
+        tbody tr{
+            background-color: white;
+        }
+        tbody tr:nth-child(odd){
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar active">
+        <div class="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Analytics</li>
+            <li>Widgets</li>
+            <li>Components</li>
+        </ul>
+    </div>
+
+    <div class="screen active">
+        <header class="d-flex align-items-center">
+            <p class="display-3 text-white">Dashboard</p>
+        </header>
+        <div class="overviews container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="overview-box">
+                        <p class="value">$ 9,790</p>
+                        <p class="title">All Earnings</p>
+                        <hr>
+                        <p class="updated"><i class="fa fa-clock-o"></i>Updated : 2:15 am</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="overview-box">
+                        <p class="value">290+</p>
+                        <p class="title">Page Views</p>
+                        <hr>
+                        <p class="updated"><i class="fa fa-clock-o"></i>Updated : 2:15 am</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="overview-box">
+                        <p class="value">27,730</p>
+                        <p class="title">Task Completed</p>
+                        <hr>
+                        <p class="updated"><i class="fa fa-clock-o"></i>Updated : 2:15 am</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="overview-box">
+                        <p class="value">500</p>
+                        <p class="title">Downloaded</p>
+                        <hr>
+                        <p class="updated"><i class="fa fa-clock-o"></i>Updated : 2:15 am</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container sales-table">
+            <div class="row">
+                <div class="col-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Application</th>
+                                <th>Sales</th>
+                                <th>Avg. Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                            </tr>
+                            <tr>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                            </tr>
+                            <tr>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                            </tr>
+                            <tr>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                                <td>Sachin Rana</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleSidebar(){
+            document.getElementsByClassName('sidebar')[0].classList.toggle('active');
+            document.getElementsByClassName('screen')[0].classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
